@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const PORT = process.env.PORT || 3001;
 const transporter = require('./config');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -48,6 +49,6 @@ app.post('/send', (req, res) => {
   }
 });
 
-app.listen(3030, () => {
-  console.log('server start on port 3030');
+app.listen(PORT, function () {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
